@@ -1,6 +1,6 @@
 const express = require("express");
 const stats = express.Router();
-const { getAllStats, getStat } = require("../queries/stats.js");
+const { getAllStats, getStat, createStat } = require("../queries/stats.js");
 const { db } = require( "../db/dbConfig.js");
 
 //INDEX
@@ -24,5 +24,11 @@ stats.get("/:id", async (req, res) => {
     }
 });
 
+
+//CREATE
+stats.post("/", async (req, res) => {
+    const stat = await createStat(req.body);
+    res.json(stat);
+});
 
 module.exports = stats;
