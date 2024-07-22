@@ -1,6 +1,6 @@
 const express = require("express");
 const stats = express.Router();
-const { getAllStats } = require("../queries/stats.js");
+const { getAllStats, getStat } = require("../queries/stats.js");
 const { db } = require( "../db/dbConfig.js");
 
 //INDEX
@@ -13,7 +13,16 @@ stats.get("/", async (req, res) => {
     }
 });
 
-
+//SHOW
+stats.get("/:id", async (req, res) => {
+    const { id } = req.params;
+    const stat = await getStat(id);
+    if (stat) {
+        res.status(200).json(stat);
+    } else {
+        res.status(404).json({error: "Not Found"});
+    }
+});
 
 
 module.exports = stats;
