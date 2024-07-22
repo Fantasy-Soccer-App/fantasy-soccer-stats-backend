@@ -8,8 +8,8 @@ const cn = {
     host: process.env.PG_HOST,
     port: process.env.PG_PORT,
     database: process.env.PG_DATABASE,
-    user: process.env.PG_USER
-}
+    user: process.env.PG_USER,
+};
 
 //Open the connection
 const db = pgp(cn);
@@ -26,5 +26,6 @@ db.connect()
     cn.done();
   })
   .catch((error) => console.log("database connection error", error));
+  
 
 module.exports = db;
