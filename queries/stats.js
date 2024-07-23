@@ -35,6 +35,29 @@ const createStat = async (stat) => {
 };
 
 
+//DELETE
+const deleteStat = async (id) => {
+  try {
+    const deletedStat = await db.one(
+      "DELETE FROM stats WHERE id = $1 RETURNING *",
+      id);
+      return deletedStat;
+  } catch (error) {
+    return error;
+  }
+};
+
+
+
+
+module.exports = { getAllStats, getStat, createStat, deleteStat, };
+
 //.any() function takes string as SQL statement as first argument. Will accept any return from the database, no rows, one row. etc.
 
-module.exports = { getAllStats, getStat, createStat };
+/*
+
+It depends on where you want your control. throw immediately hands control back to the caller: See MDN: "and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate.", while if you return a new Error, you have to handle it a different way, in another location.
+
+Return error for operational exceptions. Always check returned errors. Throw an error for non-operational exceptions. Try statement block should guard a single logical unit or a call.
+
+*/
