@@ -2,6 +2,7 @@ const express = require("express");
 const stats = express.Router();
 const { getAllStats, getStat, createStat } = require("../queries/stats.js");
 const { db } = require( "../db/dbConfig.js");
+const { checkRating, checkName } = require("../validations/checkStats.js");
 
 //INDEX
 stats.get("/", async (req, res) => {
@@ -26,7 +27,7 @@ stats.get("/:id", async (req, res) => {
 
 
 //CREATE
-stats.post("/", async (req, res) => {
+stats.post("/", checkName, checkRating, async (req, res) => {
     const stat = await createStat(req.body);
     res.json(stat);
 });
