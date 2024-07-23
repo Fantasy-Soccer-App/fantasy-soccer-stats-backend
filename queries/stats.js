@@ -48,9 +48,22 @@ const deleteStat = async (id) => {
 };
 
 
+//UPDATE
+const updatedStat = async (id, stat) => {
+  try {
+    const updatedStat = await db.one(
+      "UPDATE stats SET name=$1, position=$2 where id=$3 RETURNING *",
+      [stat.name, stat.position, id]
+    );
+    return updatedStat;
+  } catch (error) {
+    return error;
+  }
+};
 
 
-module.exports = { getAllStats, getStat, createStat, deleteStat, };
+
+module.exports = { getAllStats, getStat, createStat, deleteStat, updatedStat };
 
 //.any() function takes string as SQL statement as first argument. Will accept any return from the database, no rows, one row. etc.
 
