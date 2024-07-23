@@ -1,6 +1,6 @@
 const express = require("express");
 const stats = express.Router();
-const { getAllStats, getStat, createStat, deleteStat } = require("../queries/stats.js");
+const { getAllStats, getStat, createStat, deleteStat, updatedStat } = require("../queries/stats.js");
 const { db } = require( "../db/dbConfig.js");
 
 //INDEX
@@ -46,5 +46,16 @@ stats.delete("/:id", async (req, res) => {
 
 //route DELETE /stats/:id
 
+
+//UPDATE
+stats.put("/:id", async (req, res) => {
+    const { id } = req.params;
+    const newStat = await updatedStat(id, req.body);
+    res.status(200).json(newStat);
+});
+
+
+
+//route PUT /stats/:id
 
 module.exports = stats;
