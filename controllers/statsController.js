@@ -2,6 +2,7 @@ const express = require("express");
 const stats = express.Router();
 const { getAllStats, getStat, createStat, deleteStat, updatedStat } = require("../queries/stats.js");
 const { db } = require( "../db/dbConfig.js");
+const { checkRating, checkName } = require("../validations/checkStats.js");
 
 //INDEX
 stats.get("/", async (req, res) => {
