@@ -1,4 +1,3 @@
-### Fantasy Soccer Team Front End
 
 #### Purpose
 The aim is to create the best possible fantasy soccer team based on real-life player stats and user preferences.
