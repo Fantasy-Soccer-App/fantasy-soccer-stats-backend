@@ -4,6 +4,7 @@ CREATE DATABASE stats_dev;
 
 \c stats_dev;
 
+DROP TABLE If EXISTS stats;
 CREATE TABLE stats (
 id SERIAL PRIMARY KEY,
 name TEXT NOT NULL,
