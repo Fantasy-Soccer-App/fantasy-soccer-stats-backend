@@ -12,12 +12,12 @@ app.use(express.json());
 
 //ROUTE
 app.get("/", (req, res) => {
-    res.send("Welcome to Fantasy Soccer Stats!");
+    res.send("Welcome to Fantasy Soccer!");
 });
 
-//Stats ROUTES
-const statsController = require("./controllers/statsController.js");
-app.use("/stats", statsController);
+//Players ROUTES
+const playersController = require("./controllers/playersController.js");
+app.use("/players", playersController);
 
 // 404 PAGE
 app.get("*", (req, res) => {

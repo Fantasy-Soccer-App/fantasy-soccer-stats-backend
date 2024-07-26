@@ -1,7 +1,21 @@
 -- db/seed.sql
-\c stats_dev;
+\c players_dev;
 
+-- Delete current table and create a new one with updated list
+DROP TABLE IF EXISTS players;
 
+CREATE TABLE stats (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    position TEXT,
+    mins_played INTEGER,
+    assists INTEGER,
+    goals INTEGER,
+    perc_score NUMERIC(5, 2),
+    rating NUMERIC(5, 2)
+);
+
+-- Insert updated data
 INSERT INTO stats (name, position, mins_played, assists, goals, perc_score, rating) VALUES
 ('Lionel Messi', 'Forward', 1400, 10, 20, 85.00, 8.50),
 ('Cristiano Ronaldo', 'Forward', 1423, 8, 15, 85.60, 8.30),

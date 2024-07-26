@@ -1,10 +1,11 @@
 -- db/schemal.sql
-DROP DATABASE IF EXISTS stats_dev;
-CREATE DATABASE stats_dev;
+DROP DATABASE IF EXISTS players_dev;
+CREATE DATABASE players_dev;
 
-\c stats_dev;
+\c players_dev;
 
-CREATE TABLE stats (
+DROP TABLE IF EXISTS players;
+CREATE TABLE players (
 id SERIAL PRIMARY KEY,
 name TEXT NOT NULL,
 position TEXT,

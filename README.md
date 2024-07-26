@@ -1,6 +1,6 @@
 
 #### Purpose
-The aim is to create the best possible fantasy soccer team based on real-life player stats and user preferences.
+The aim is to create the best possible fantasy soccer team based on real-life player statistics and user preferences.
 
 #### Problem Solved
 This app addresses an entertainment need by allowing users to rank players in their fantasy team based on personal preferences.
@@ -10,14 +10,14 @@ This app addresses an entertainment need by allowing users to rank players in th
 - **Player Rating**: "I rate this player [ranking number from 1-10] because [insert comment]." Players are ranked through an algorithm and positioned in the user's fantasy team array based on their rating.
 
 #### Static and Dynamic Data
-- **Static Stats**: Users rely on static stats to decide which players to add to their team.
+- **Static Statistics**: Users rely on static stats to decide which players to add to their team.
 - **Dynamic User Input**: Users' comments and ratings are dynamic and editable.
 
 #### Building Your Team
 1. **Create Your Team**: 
    - The landing page has a "Create Your Team" button that leads to the index page.
    - The index page displays all players as cards with stats.
-   - Clicking on a player card navigates to the show page with detailed stats and photo.
+   - Clicking on a player card navigates to the show page with detailed player statistics and their respective photo.
 
 2. **Adding Players**:
    - Users can search for players by name or browse the player directory.
@@ -120,7 +120,7 @@ FantasySoccerStats/
 - **Button**: "Create Your Fantasy Team" in the middle of the page.
 
 **Index Page**
-- **Button**: "Soccer Player/Stats Directory" on the left side.
+- **Button**: "Soccer Player Directory" on the left side.
 - **Body**: Player cards with stats. Each card includes:
   - Top: Player name
   - Image: Player photo
