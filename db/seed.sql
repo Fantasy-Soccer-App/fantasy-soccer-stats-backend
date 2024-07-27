@@ -4,7 +4,7 @@
 -- Delete current table and create a new one with updated list
 DROP TABLE IF EXISTS players;
 
-CREATE TABLE stats (
+CREATE TABLE players (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     position TEXT,
