@@ -173,3 +173,4 @@ FantasySoccerStats/
 - Submit form → View final team on Show Page.
 
 ---
+git commit -m "updatedlocal backend .env file to add PORT number and DATABASE_URL. Specifically Internal Database URL provided by render's play
