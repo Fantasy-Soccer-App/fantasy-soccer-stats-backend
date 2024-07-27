@@ -16,7 +16,7 @@ CREATE TABLE players (
 );
 
 -- Insert updated data
-INSERT INTO stats (name, position, mins_played, assists, goals, perc_score, rating) VALUES
+INSERT INTO players (name, position, mins_played, assists, goals, perc_score, rating) VALUES
 ('Lionel Messi', 'Forward', 1400, 10, 20, 85.00, 8.50),
 ('Cristiano Ronaldo', 'Forward', 1423, 8, 15, 85.60, 8.30),
 ('Kevin De Bruyne', 'Mid-Field', 1355, 12, 10, 78.40, 8.15),
